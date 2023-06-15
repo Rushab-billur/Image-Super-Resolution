@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+    <title>Image Super Resolution</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #head {
+            background-color: black;
+            font-family: 'Rubik Vinyl', cursive;
+            color: white;
+            margin: 0px;
+            padding: 19px 0px;
+        }
+        h1{
+            font-size: 40px;
+        }
+        button{
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            left :38%;
+            bottom: 20%;
+        }
+        input{
+            font-family: 'Boogaloo', cursive;
+            font-size: 17px;
+        }
+        pre{
+            font-size: 45px;
+            position: absolute;
+            left: 12%;
+            top:30%;
+            font-family: 'Boogaloo', cursive;
+        }
+        #submit_but{
+            position: relative;
+            top  : 390px;
+            left : 5px;
+            width: 100px;
+            height: 30px;
+            font-family: 'Boogaloo', cursive;
+            font-size: 20px;
+        }
+        .fade-box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(252, 172, 172);
+            opacity: 0;
+            transition: opacity 5s;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <center>
+            <h1>P i x e l  R e s t o r a t i o n</h1>
+        </center>
+    </header>
+    <main>
+        <pre>
+              Hello everyone,Pixel restoration super resolutes 
+                            the low resolution image.
+                            
+                   Input your low quality image below.
+        </pre>
+        
+        <form action="/second_page_Form/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if messages %}
+        {% for msg in messages %}
+        <div id="myBox" class="fade-box">{{ msg }}</div>
+        {% endfor %}
+        </div>
+        {% endif %}
+            <center><button><input type="file" name="lr_img" id="img_id" accept="image/png,image/jpeg"></button></center>
+            <center><button id="submit_but" type="submit" >Submit</button></center>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+    <title>Image Super Resolution</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #head {
+            font-family: 'Rubik Vinyl', cursive;
+            background-color: black;
+            color: white;
+            margin: 0px;
+            padding: 19px 0px;
+        }
+        h1{
+            font-size: 40px;
+        }
+        
+        button{
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            height: 30px;
+            width: 200px;
+            position: absolute;
+            bottom:4%;
+            left:40% ;  
+            font-size: 20px;
+            font-family: 'Boogaloo', cursive;
+        }
+        pre{
+            font-size: 40px;
+            margin: 100px;
+            font-family: 'Boogaloo', cursive;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        .image1{
+            position: relative;
+            left:5%;
+            top:1px;
+        }
+        .image2{
+            position: relative;
+            left:70%;
+            top:19px;
+            border-radius: 100%;
+        }
+        .text{
+            position:absolute;
+            top: 49%;
+            right: 42%;
+        }
+        .text2{
+            position: absolute;
+            left:40%;
+            top:25%
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <center>
+            <h1>P i x e l   R e s t o r a t i o n</h1>
+        </center>
+    </header>
+    <main>
+        <div class="image1">
+            <img src="{% static 'images/image1.jpg' %}" width="40%"  alt="">
+        </div>
+        <pre class="text2">
+            Enhances the low quality images
+      </pre>
+        <div class="image2">
+            <img src="{% static 'images/image2.jpeg' %}" width="25%"  alt="">
+        </div>
+        <pre class="text">
+              Pixel Restoration or Image super resolution 
+              aims to reconstruct the high-quality image
+              from its low-quality 
+        </pre>
+        <center><button><a href="ImageSR/" >Click here</a></button></center>
+    </main>
+</body>
+
+</html>

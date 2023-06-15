@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+    <title>Image Super Resolution</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #head {
+            background-color: black;
+            font-family: 'Rubik Vinyl', cursive;
+            color: white;
+            margin: 0px;
+            padding: 19px 0px;
+        }
+        h1{
+            font-size: 40px;
+        }
+        button{
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            left :38%;
+            bottom: 20%;
+        }
+        h3{
+            font-family: 'Boogaloo', cursive;
+            font-size: 40px;
+        }
+        .main_container{
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            padding: 10px;
+            border: 2px solid black;
+            height: 350px;
+            width: 1100px; 
+        }
+        .lr_container{
+            /* border: 2px solid; */
+            width: 50%;
+            float: left;
+            
+        }
+        .sr_container{
+            /* border: 2px solid; */
+            width: 50%;
+            float: right;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header id="head">
+        <center>
+            <h1>P i x e l  R e s t o r a t i o n</h1>
+        </center>
+    </header>
+    <main>
+        <center>
+            <!-- <div class="main_container"> -->
+                <div class="lr_container">
+                    {% for lr in lr_image %}
+                    <h3>LR Image</h3>
+                    <p></p>
+                   <img src="{{ lr.lr_image.url }}" width="50%"  alt="">
+                    {% endfor %}
+                </div>
+                <div class="sr_container">
+                    {% for sr in sr_image %}
+                    <h3>SR Image</h3>
+                    <img src="{{ sr.sr_image.url }}" width="50%"  alt="">
+                    {% endfor %}
+                </div>
+            </div>     
+        </center>   
+    </main>
+</body>
+
+</html>
